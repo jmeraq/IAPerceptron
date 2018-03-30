@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+        <meta charset="UTF-8">
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/main.css">
+		<script type="text/javascript" src="js/libs/jquery-1.9.1.min.js"></script>
+		<script type="text/javascript" src="js/libs/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/highcharts.js"></script>
+		<script type="text/javascript" src="js/exporting.js"></script>
+		<script type="text/javascript" src="js/main.js"></script>
+	</head>
+	<body>
+
+		<div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h1 class="panel-title">Puntos de Entrenamiento</h1>
+                        </div>
+                        <div class="panel-body">
+                            <div class="col-md-12">
+                                <h5>Ingreso los puntos que pertenecen al grupo 1</h5>
+                                <form id="form_1" class="form-inline" role="form">
+                                    <div id="numero_1" class="col-md-12">
+                                        <div class="form-group">
+                                            <label class="sr-only">Punto X</label>
+                                            <input class="form-control punto" placeholder="Punto X">
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="sr-only">Punto Y</label>
+                                            <input class="form-control punto" placeholder="Punto Y">
+                                        </div>
+                                        <div class="form-group btn-group">
+                                            <button onclick="anadir(1)" type="button" class="btn btn-primary">+</button>
+                                        </div>
+                                        <input type="hidden" class="punto" value="1" id="punto[0][2]">
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="col-md-12">
+                                <h5>Ingreso los puntos que pertenecen al grupo 2</h5>
+                                <form id="form_0" class="form-inline" role="form">
+                                    <div id="numero_0" class="col-md-12">
+                                        <div class="form-group">
+                                            <label class="sr-only">Punto X</label>
+                                            <input class="form-control punto" placeholder="Punto X">
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="sr-only" >Punto Y</label>
+                                            <input class="form-control punto" placeholder="Punto Y">
+                                        </div>
+                                        <div class="form-group btn-group">
+                                            <button onclick="anadir(0)" type="button" class="btn btn-primary">+</button>
+                                        </div>
+                                        <input type="hidden" class="punto" value="-1" id="punto[1][2]">
+                                    </div>                      
+                                </form>
+                            </div>
+                        </div>
+                        <div class="panel-footer">
+                            <button onclick="calcular(),reiniciarP()" type="button" class="btn btn-primary">Ejecutar</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Puntos de Prueba</h3>
+                        </div>
+                        <div class="panel-body">
+                            <h5>Ingrese los puntos</h5>
+                            <form id="formP_1" class="form-inline" role="form">
+                                <div id="numero_2" class="col-md-12">
+                                    <div class="form-group">
+                                        <label class="sr-only">Punto X</label>
+                                        <input id="puntoP_20" onkeyup="verificar(2)" class="form-control puntoP" placeholder="Punto X">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="sr-only">Punto Y</label>
+                                        <input id="puntoP_21" onkeyup="verificar(2)" class="form-control puntoP" placeholder="Punto Y">
+                                    </div>
+                                    <div class="form-group btn-group">
+                                        <button onclick="anadirP()" type="button" class="btn btn-primary">+</button>
+                                    </div>
+                                    <span id="puntoP_22" class="invisible label label-info">Grupo 1</span>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="panel-footer">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="grafico" class=" panel panel-primary">
+                    </div>
+                </div>
+            </div>
+            <br>
+            <br>
+		</div>
+
+
+
+	</body>
+
+	
+	
+</html>
